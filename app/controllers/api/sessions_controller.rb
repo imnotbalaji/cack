@@ -1,9 +1,10 @@
 class Api::SessionsController < ApplicationController
   
   def show
+    
     if (logged_in?) 
     @user = current_user
-    render json: {"user": @user.slice('id','email')}
+    render '/api/users/show'
     else 
     render json: {"user": nil}
     end
@@ -15,7 +16,7 @@ class Api::SessionsController < ApplicationController
 
     if (@user)
       login!(@user)
-      render json: {"user": @user.slice('id','email')}
+      render '/api/users/show'
 
     else
       render json: {errors: ['Invalid credentials']}, status: :unauthorized 

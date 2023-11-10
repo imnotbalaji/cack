@@ -1,12 +1,14 @@
 class Api::UsersController < ApplicationController
+
+
   wrap_parameters include: User.attribute_names + ['password'] 
   def create
     
     @user = User.new(user_params)
 
     if @user.save
-      login(@user)
-      render json: {"user": @user.slice('id','email')}
+      login!(@user)
+      render :show
     else 
 
       render json: @user.errors.full_messages, status: :unprocessable_entity
