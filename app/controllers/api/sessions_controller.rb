@@ -1,5 +1,7 @@
 class Api::SessionsController < ApplicationController
-  
+  before_action :require_logged_in, only: [:destroy]
+  before_action :require_logged_out, only: [:create]
+
   def show
     
     if (logged_in?) 
@@ -19,7 +21,7 @@ class Api::SessionsController < ApplicationController
       render '/api/users/show'
 
     else
-      render json: {errors: ['Invalid credentials']}, status: :unauthorized 
+      render json: {errors: ['Sorry, but those credentials are invalid.']}, status: :unauthorized 
     end 
 
   end

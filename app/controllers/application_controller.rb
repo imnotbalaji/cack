@@ -27,6 +27,7 @@ class ApplicationController < ActionController::API
     end 
 
     def require_logged_in 
+
         render json: {message: 'Must be logged in'}, status: :unauthorized if (!logged_in?)
     end 
 
@@ -34,21 +35,7 @@ class ApplicationController < ActionController::API
         render json: {message: 'Must be logged out'}, status: :unauthorized if (logged_in?)
     end
 
-    def test 
-
-        if (params.has_key?("login"))
-            login!(User.first)
-        elsif (params.has_key?("logout")) 
-            logout!
-        end 
-
-        if (logged_in?)
-            render json: {user: current_user.slice('id','email','session_token')}
-        else
-            render json: ['No current user'] 
-        end 
-
-    end 
+  
 
     private 
     def snake_case_params
