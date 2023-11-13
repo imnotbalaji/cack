@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import './LoginForm.css';
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-import { loginThunkAction } from "../../store/session";
+import { loginThunkAction } from "../../../store/session";
 import { Redirect, useHistory } from "react-router-dom/cjs/react-router-dom";
+import Footer from "../Footer";
 
 const LoginForm = () => {
 
@@ -48,28 +49,34 @@ const LoginForm = () => {
     }
 
     return (
-        <>
-        <div>
-          <h2>logo</h2>
-          <div>
-            New to Slack?
-            <br/>
-           <Link to="/signup">Create an account</Link>
-          </div>
+
+        <div className ="getting-started">
+             <div className="login-form-header">
+                <div> </div>
+                <h2>logo</h2>
+                <div className="sign-up-link">
+                    New to Slack?
+                    <br/>
+                    <Link to="/signup">Create an account</Link>
+                </div>
+             </div>
+            <form className = "login-form" onSubmit = {handleSubmit}>
+                <h1> Sign in to Cack </h1>
+                <p> We suggest using the <strong>email address</strong> you use at school </p>
+                <div className="login-input-container">
+                    <input placeholder="name@work-email.coms"value={email} onChange={handleEmailChange}/>
+                    <input type ="password" placeholder="*******" onChange={handlePasswordChange}/>
+                    {errors && 
+                        <ul className = "errors"> 
+                        {errors?.map(error => <li key = {error}>{error} </li>)}
+                    </ul>
+                    }
+                    <button> Sign In with Email</button>
+                </div>
+            </form>
+            <Footer/>
+
         </div>
-        <form className = "login-form" onSubmit = {handleSubmit}>
-            
-            <h1> Sign in to Cack </h1>
-            <p> We suggest using the <strong>email address</strong> you use at school </p>
-            <input placeholder="name@work-email.coms"value={email} onChange={handleEmailChange}/>
-            <input type ="password" placeholder="*******" onChange={handlePasswordChange}/>
-            <ul className = "errors"> 
-                {errors?.map(error => <li key = {error}>{error} </li>)}
-            </ul>
-            <button> Sign In with Email</button>
-        </form>
-        </>
-        
     )
     
     

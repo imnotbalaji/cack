@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Redirect, useHistory } from "react-router-dom/cjs/react-router-dom";
 import { useState } from "react";
-import { signupThunkAction } from "../../store/session";
+import { signupThunkAction } from "../../../store/session";
+import Footer from "../Footer";
 
 import "./SignupForm.css"
 
@@ -44,21 +45,27 @@ const SignupForm = () => {
     }
 
     return (
-        
+        <div className = "signup-container">
+            <header>
+            <h1>logo </h1>
+            </header>
+            
             <form className="signup-form" onSubmit={handleSubmit}>
             <h1>First, enter your email</h1>
             <p>We suggest using the <strong>email you use at work</strong></p>
             <input placeholder="name@work-email.com" value={email} onChange = {handleEmailChange}/>
             <input placeholder ="pasword" value={password} onChange ={handlePasswordChange}/>
+            
             <ul className = "errors">
                 {errors?.map(error => <li key ={error}>{error}</li>)}
             </ul>
-            <button>Continue</button>
-
-
-
-
+            <button className ="signup-button">Continue</button>
         </form>
+         <Footer/>
+
+
+        </div>
+        
     )
 
 

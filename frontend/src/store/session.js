@@ -15,8 +15,9 @@ export const logoutAction = () => ({
 export const loginThunkAction = (email,password) => async (dispatch) => {
     const res = await csrfFetch('/api/session/', {method: "post", body: JSON.stringify({email, password})})
     const data = await res.json()
-    dispatch(loginAction(data.user));
     storeCurrentUser(data.user);
+    dispatch(loginAction(data.user));
+    
     return res;
 }
 
@@ -32,20 +33,23 @@ export const signupThunkAction = (email,password) => async (dispatch) => {
 }
 
 export const logoutThunkAction = () => async (dispatch) => {
-
+    // debugger
     const res = await csrfFetch('/api/session/', {method: "DELETE"});
-    
-    dispatch(logoutAction());
+    // debugger
     storeCurrentUser(null)
+    dispatch(logoutAction());
+    return res;
+    
 
 
 }
 
 const storeCurrentUser = (user) => {
+    // debugger
     if (user) {
         sessionStorage.setItem("currentUser",JSON.stringify(user))
     } else {
-        sessionStorage.removeItem("currrentUser");
+        sessionStorage.removeItem("currentUser");
     }
 }
 

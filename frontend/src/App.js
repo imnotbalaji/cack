@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
-import LoginForm from "./components/LoginForm";
 import {Switch, Route, Redirect } from "react-router-dom/cjs/react-router-dom";
-import SignupForm from "./components/SignupForm";
-import Navigation from "./components/Navigation";
+import LoginForm from "./components/User_auth/LoginForm";
+import SignupForm from "./components/User_auth/SignupForm";
+
 import SplashPage from "./components/SplashPage";
+import HomePage from "./components/Home"
+
 import ErrorPage from "./components/ErrorPage";
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
       <Route path="/login"> <LoginForm /> </Route>
       <Route path="/signup"><SignupForm /></Route>
       <Route exact path = "/">
-      {sessionUser ? <Navigation/> : <SplashPage/>}
+      {sessionUser ? <HomePage/> : <SplashPage/>}
       </Route>
       <Redirect to = "/errors"/>
     </Switch>

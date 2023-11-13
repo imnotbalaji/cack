@@ -1,0 +1,23 @@
+.nav-bar {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+    margin-top: 0vh;
+    width: 80px;
+    flex-direction: column;
+    background-color: #d7d8da;
+}
+
+.nav-bar button {
+    width: 80%;
+    border: 1px;
+    border-radius: 5px;;
+    margin-bottom: 2px;
+    cursor: pointer;
+    
+    background-color: purple;
+    color: white;
+    margin: 5px;
+
+}
