@@ -31,6 +31,7 @@
 
 # New things I added per the readme
 .byebug_history
+/public
 .DS_Store  
 /frontend/node_modules
 
