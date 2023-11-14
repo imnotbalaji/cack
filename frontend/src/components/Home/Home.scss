@@ -22,8 +22,7 @@
         // grid-column:start
         grid-row-start: 2;
         grid-row-end: -1;
-        display: grid;
-        grid-template-columns: 1fr 2fr 2fr ;
+        display: flex;
         * {
             border: 1px solid red;
 

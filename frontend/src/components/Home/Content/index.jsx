@@ -10,9 +10,9 @@ const Content = () => {
             </div>
         <div className="conversation">
             Conversation</div>
-            <div className="userProfile">
+            {/* <div className="userProfile">
                 <UserProfile userId={1}/>
-            </div>
+            </div> */}
         </>
     )
 
