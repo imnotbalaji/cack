@@ -12,7 +12,7 @@ export const storeCSRF = (res) => {
     // debugger
     const token = res.headers.get('X-CSRF-Token');
     if (token) {
-        console.log(token);
+       
     sessionStorage.setItem('X-CSRF-Token',token)
     }
 }

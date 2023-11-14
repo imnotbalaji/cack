@@ -1,0 +1,17 @@
+{
+  "name": "cack",
+  "version": "1.0.0",
+  "description": "Slack clone",
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

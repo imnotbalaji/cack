@@ -46,7 +46,7 @@ if (
   sessionStorage.getItem('currentUser') === null
   ) {
     // debugger
-  console.log("testing")
+  
   store.dispatch(restoreSession()).then(render_application)
 } else {
   
