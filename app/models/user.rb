@@ -29,6 +29,13 @@ class User < ApplicationRecord
    allow_nil: true
 
 
+  #  Association
+
+   has_many :messages,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Message
+
    # Validation Methods 
 
    def self.find_by_credentials(email, password) 
