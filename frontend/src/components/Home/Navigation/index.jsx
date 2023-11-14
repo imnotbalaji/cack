@@ -1,5 +1,5 @@
 import ProfileButton from "./ProfileButton"
-import "./Navigation.css"
+import "./Navigation.scss"
 
 const Navigation = () => {
 

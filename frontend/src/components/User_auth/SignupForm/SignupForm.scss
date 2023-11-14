@@ -1,0 +1,98 @@
+$slack-purple: #541554;
+
+//Overall Page
+///Header
+////Logo
+/// Signup-container
+////H1
+/// Footer
+
+
+
+.signup-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.signup-container {
+    header {
+        margin: 45px;
+    }
+    
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-items: around;
+    font-family: Roboto;
+
+    h1 {
+        margin: 0px;
+        font-size : 45px;
+
+    }
+    p {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+    ul {
+        margin: 0px;
+        padding: 0px;
+    }
+    button {
+
+        background-color: $slack-purple;
+        color: white;
+        
+        font-weight: 700;
+        font-size: large;
+        border-radius: 5%;
+    }
+
+    input, button {
+        padding: 10px;
+        width: 100%;
+        width: 400px;
+        box-sizing: border-box;
+    }
+
+    .error {
+        border-color: red
+    }
+    
+}
+
+.login-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    margin-top: 20px;
+
+    p {
+        margin-top: 1px;
+        margin-bottom: 1px;
+        color: grey
+    }
+
+    a {
+        margin-top: 5px;
+        text-decoration: none;
+    }
+}
+
+
+
+
+
+
+
+

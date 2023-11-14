@@ -1,9 +1,9 @@
-import "./SearchBar.css"
+import "./SearchBar.scss"
 const SearchBar = () => {
 
     return (
         <div className ="search-bar">
-            Search Bar
+            <input className ="search-box" value="Search Cack"/>
         </div>
     )
 }

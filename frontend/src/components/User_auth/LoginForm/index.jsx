@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import './LoginForm.css';
+import './LoginForm.scss';
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
 import { loginThunkAction } from "../../../store/session";
@@ -52,11 +52,13 @@ const LoginForm = () => {
 
         <div className ="getting-started">
              <div className="login-form-header">
-                <div> </div>
-                <h2>logo</h2>
+                <div></div>
+                <div className = "logo">
+                <img  src="https://www.edigitalagency.com.au/wp-content/uploads/slack-logo-png-1.png" />
+                </div>
+                
                 <div className="sign-up-link">
-                    New to Slack?
-                    <br/>
+                    <p>New to Slack?</p>
                     <Link to="/signup">Create an account</Link>
                 </div>
              </div>

@@ -1,0 +1,90 @@
+$slack-purple: #541554;
+$slack-golden: #ecb22e;
+
+// Splash Nav Bar
+/// Logo 
+/// Sign In Link
+// Splash Content 
+// Splash Footer
+body {
+    margin: 0px;
+    padding: 0px;
+    
+}
+.splash-navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+     background-color: $slack-purple;
+     font-family: Roboto;
+
+}
+.splash-navbar img {
+    height: 3.5vh;
+    margin: 10px
+}
+.splash-navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: 500;
+
+}
+
+
+
+.splash-content {
+    background-color: $slack-purple;
+    padding: 10px;
+    color: white;
+    font-family: Roboto;
+    font-size: 30px;
+    height: 80vh;
+}
+.splash-content span {
+    color: $slack-golden
+}
+
+.login-button {
+    margin-top: 40px;
+
+    background-color: white;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-button a {
+    
+    // Box Styling 
+    
+    
+    
+    //Font  
+    color: $slack-purple;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: .1em;
+
+    
+
+}
+
+.splash-content p {
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    font-weight: 300
+
+}
+.splash-footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: grey
+    
+}
