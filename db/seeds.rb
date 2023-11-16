@@ -22,27 +22,42 @@ ApplicationRecord.transaction do
 
     puts "Creating Users..."
 
-    User.create!(email: "demo_user1@cack.com", password: "password")
-    User.create!(email: "demo_user2@cack.com", password: "password")
+    harrypotter = User.create!(email: "demo_user1@cack.com", password: "password")
+    ronweaslsey = User.create!(email: "demo_user3@cack.com", password: "password")
+    hermionegranger = User.create!(email: "demo_user2@cack.com", password: "password")
 
-    puts "Creating Users"
+    puts "creating DM and adding members to it "
+    
+    firstmeeting = DirectMessage.create();
+    firstmeeting.members = harrypotter,ronweaslsey,hermionegranger
 
-    10.times do 
+    
 
-        User.create({
-        email: Faker::Movies::HarryPotter.unique.character.gsub(/\s+/,"") + "@hogwarts.com",
-        password: "password"
-        })
-    end 
+    puts "Creating Messages"
 
-    puts "Adding messages"
+    message1 = Message.create!(body: "Excuse me, do you mind? Everywhere else is full", author:ronweaslsey, conversation: firstmeeting )
+    message2 = Message.create!(body: "No, not at all", author:harrypotter, conversation: firstmeeting )
+    message3 = Message.create!(body: "Im Ron by the way ", author:ronweaslsey, conversation: firstmeeting )
+    message4 = Message.create!(body: "Im Harry Harry Potter ", author:harrypotter, conversation: firstmeeting )
 
-    15.times do 
-        Message.create({
-            body: Faker::Movies::HarryPotter.quote,
-            author_id: rand(1..12)
-        })
-    end
+    
+
+    # 10.times do 
+
+    #     User.create({
+    #     email: Faker::Movies::HarryPotter.unique.character.gsub(/\s+/,"") + "@hogwarts.com",
+    #     password: "password"
+    #     })
+    # end 
+
+    # puts "Adding messages"
+
+    # 15.times do 
+    #     Message.create({
+    #         body: Faker::Movies::HarryPotter.quote,
+    #         author_id: rand(1..12)
+    #     })
+    # end
 
 
     puts "Done"

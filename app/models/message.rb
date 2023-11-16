@@ -11,11 +11,12 @@
 #  updated_at        :datetime         not null
 #
 class Message < ApplicationRecord
+  
+  # Validations
   validates :body, presence: true
   
 
-
-
+  # Associations
   belongs_to :author,
     primary_key: :id,
     foreign_key: :author_id,

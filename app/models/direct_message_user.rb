@@ -10,6 +10,8 @@
 #
 class DirectMessageUser < ApplicationRecord
     # Joins table 
+    
+    
     # Associations
         belongs_to :dm,
             primary_key: :id,
@@ -20,4 +22,7 @@ class DirectMessageUser < ApplicationRecord
             primary_key: :id,
             foreign_key: :member_id,
             class_name: :User
+
+
+
 end
