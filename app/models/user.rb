@@ -34,8 +34,21 @@ class User < ApplicationRecord
    has_many :messages,
     primary_key: :id,
     foreign_key: :author_id,
-    class_name: :Message
+    class_name: :Message,
+    inverse_of: :author,
+    dependent: :destroy
 
+    has_many :dm_members,
+      primary_key: :id,
+      foreign_key: :member_id,
+      class_name: :DirectMessageUser,
+      dependent: :destroy
+
+    has_many :dms,
+      through: :dm_members,
+      source: :dm
+
+  
    # Validation Methods 
 
    def self.find_by_credentials(email, password) 

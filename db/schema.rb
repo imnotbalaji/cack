@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_14_204655) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_16_132913) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "direct_message_users", force: :cascade do |t|
+    t.bigint "dm_id", null: false
+    t.bigint "member_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dm_id"], name: "index_direct_message_users_on_dm_id"
+    t.index ["member_id"], name: "index_direct_message_users_on_member_id"
+  end
+
+  create_table "direct_messages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.text "body", null: false
@@ -38,5 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_14_204655) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "direct_message_users", "direct_messages", column: "dm_id"
+  add_foreign_key "direct_message_users", "users", column: "member_id"
   add_foreign_key "messages", "users", column: "author_id"
 end
