@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session'
 import { restoreSession } from './store/session';
+import { fetchDM, postMessagetoDM,fetchDMIndex } from './store/directMessages';
 
 
 const store = configureStore();
@@ -16,6 +17,10 @@ if (process.env.NODE_ENV !== 'production'){
   window.store = store;
   window.csrfFetch =csrfFetch;
   window.sessionActions = sessionActions;
+  window.fetchDM = fetchDM;
+  window.fetchDMIndex = fetchDMIndex;
+  window.postMessagetoDM = postMessagetoDM;
+
 }
 
 const Root = () => {

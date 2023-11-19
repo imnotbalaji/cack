@@ -3,7 +3,7 @@ const SearchBar = () => {
 
     return (
         <div className ="search-bar">
-            <input className ="search-box" value="Search Cack"/>
+            <input className ="search-box" placeholder="Search Cack"/>
         </div>
     )
 }

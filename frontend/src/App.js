@@ -14,13 +14,13 @@ function App() {
   return (
     <>
     <Switch>
-      <Route path = "/errors"> <ErrorPage/></Route>
+      {/* <Route path = "/errors"> <ErrorPage/></Route> */}
       <Route path="/login"> <LoginForm /> </Route>
       <Route path="/signup"><SignupForm /></Route>
-      <Route exact path = "/">
+      <Route path = "/">
       {sessionUser ? <HomePage/> : <SplashPage/>}
       </Route>
-      <Redirect to = "/errors"/>
+      {/* <Redirect to = "/errors"/> */}
     </Switch>
     </>
   );

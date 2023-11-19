@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
-  post 'api/test', to: 'application#test'
+  # post 'api/test', to: 'application#test'
 
   namespace :api, defaults: { format: :json } do 
     resources :users, only: [:create,:show]
+    resources :direct_messages, only: [:index, :show, :create] do 
+      resources :messages, only: [:create]
+    end 
     resource :session, only: [:create, :show, :destroy]
-    
+
+
   end 
 
 

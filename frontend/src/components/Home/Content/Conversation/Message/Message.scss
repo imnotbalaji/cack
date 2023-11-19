@@ -1,0 +1,29 @@
+$slack-purple: #541554;
+
+.message-container {
+
+    margin-left: 5px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    > p {
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 10%;
+        background-color: $slack-purple;
+    }
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+}

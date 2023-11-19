@@ -38,7 +38,7 @@ class User < ApplicationRecord
     inverse_of: :author,
     dependent: :destroy
 
-    has_many :dms,
+    has_many :dm_members,
       primary_key: :id,
       foreign_key: :member_id,
       class_name: :DirectMessageUser,

@@ -1,6 +1,13 @@
 import csrfFetch from "./csrf";
+import { RECEIVE_DM, RECEIVE_DM_INDEX } from "./directMessages";
 
 const GETUSER = 'user/GETUSER';
+
+//Selector 
+
+// const getUserbyId = (id) => (state) => {
+//     return state.users[id]
+// }
 
 const getUser = (user) => ({
     type: GETUSER,
@@ -15,7 +22,21 @@ const getUserThunkAction = (userId) => async (dispatch) => {
 
 const userReducer = (state ={},action) => {
 
-    return state;
+    // const newState = Object.assign({},Object.freeze(state));
+
+    switch (action.type){
+        case RECEIVE_DM_INDEX: 
+
+            const newState = {};
+            return {...newState,...action.data.users}
+
+        
+    
+        default : 
+        return state;
+
+    }
+   
 
 }
 
