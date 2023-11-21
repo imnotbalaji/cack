@@ -3,6 +3,7 @@
 
 json.directMessages do 
     json.set! @dm.id  do 
+        json.id @dm.id
         json.messages @dm.messages.order(:created_at).pluck(:id)
         json.users @dm.members.pluck(:id)
         

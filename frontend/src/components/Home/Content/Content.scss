@@ -1,9 +1,100 @@
+.new-message-form-container {
+    // border: 1px solid red;
+    border-bottom: 1px solid lightgrey;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+    * {
+        margin: 0px;
+    }
+    
+}
+
+
 .conversation-list {
     flex-grow: 0;
     flex-shrink:0;
-    flex-basis: 20%;
+    flex-basis: 25%;
     background-color: #f5f5f6;
-    border-right: 1px solid #f5f5f6;
+    // border: 1px solid red;
+    // border: 1px solid #f5f5f6;
+    // border-radius: 20px;;
+    margin: 0px;
+    z-index: 6;
+    // overflow:auto;
+    overflow: -moz-scrollbars-vertical; 
+    overflow:scroll;
+    ul {
+        // border-top: 1px solid grey;
+        margin: auto;
+        list-style-type: none;
+        display: flex;
+        overflow: -moz-scrollbars-vertical; 
+        overflow:scroll;
+        flex-direction: column;
+        gap: 5px;
+        padding: 5px;
+        // border: 1px solid red;
+
+    }
+    ul li  {
+        
+        margin: 2px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: flex; /* Flexbox for centering */
+        align-items: center; /* Vertical centering */
+        justify-content: center; /* Horizontal centering */
+        margin: 0px;
+        // border: 1px solid red; /* Optional: Adds a border for visibility */
+        border-radius: 5px;
+        color: black;
+        &:hover {
+            background-color: #1264a3;
+            color: white !important;
+            // border: 1px solid #1264a3;
+            padding: 2px;
+            // border-radius: 10%;
+             a {
+                color: white;
+             }
+          }
+
+          .active {
+            background-color: #333133;
+            color: white;
+        }
+      
+        
+        a {
+            
+            width: 100%;
+            text-decoration: none;
+            overflow: hidden;
+            padding: 5px;
+            color: black;
+            text-overflow: ellipsis;
+           
+          
+        }
+        
+    }
+
+   
+   
+
+    
 }
 
 .userProfile {

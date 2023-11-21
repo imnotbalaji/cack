@@ -8,10 +8,7 @@
 #
 class DirectMessage < ApplicationRecord
 
-    #  uniqueness constraint - you cannot start a new DM between the same set of users
-    #  Should also be adding a composite index in the database 
-    # Custom_validation
-    
+
 
     has_many :messages, as: :conversation, dependent: :destroy
 
@@ -26,13 +23,6 @@ class DirectMessage < ApplicationRecord
         source: :member
 
 
-
-    def add_members(*users)
-        # Probably should be adding by id ? - revisit later 
-        users.each do |user|
-            self.members << user
-        end 
-    end 
 
     # When someone creates a DM, then they must have a payload of users and a message
 

@@ -1,20 +1,25 @@
 .send-message-area form{
-    height: 80%;
-    width: 95%;
-    // margin: 10px;
-    border: 2px solid grey ;
+    height: 100%;
+    width: 90%;
+    margin: 25px;
+    border: 1px solid lightgrey ;
+    // border: none;
     border-radius: 5px;
 
     display: flex;
     flex-direction: row;
     align-items: center;
     gap:5px;
+    padding: 10px;
     
 
     textarea {
         height: 95%;
         width: 90%;
-        border-right: none;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border: none;
+        font-family: Roboto;
+        font-size: 15px;
+        color: lightgrey
+        
     }
 }

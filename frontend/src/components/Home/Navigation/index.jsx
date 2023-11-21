@@ -5,7 +5,7 @@ const Navigation = () => {
 
     return (
      <div className = "nav-bar">
-        <p>Home</p>
+        <i className="fa-solid fa-house fa-xl"></i>
         <ProfileButton/>
      </div>
         

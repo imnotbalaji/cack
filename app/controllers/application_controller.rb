@@ -41,6 +41,9 @@ class ApplicationController < ActionController::API
     def snake_case_params
         params.deep_transform_keys!(&:underscore)
     end 
+    def from_template(template, locals = {})
+    JSON.parse(self.class.render(:json, template: template, locals: locals))
+    end 
 
     def attach_authenticity_token
         headers['X-CSRF-Token'] = masked_authenticity_token(session)

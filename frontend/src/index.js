@@ -9,6 +9,10 @@ import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session'
 import { restoreSession } from './store/session';
 import { fetchDM, postMessagetoDM,fetchDMIndex } from './store/directMessages';
+import { fetchUsers } from './store/user';
+import { createDM } from './store/directMessages';
+
+
 
 
 const store = configureStore();
@@ -20,8 +24,13 @@ if (process.env.NODE_ENV !== 'production'){
   window.fetchDM = fetchDM;
   window.fetchDMIndex = fetchDMIndex;
   window.postMessagetoDM = postMessagetoDM;
+  window.fetchUsers = fetchUsers;
+  window.creatDM = createDM;
+  
 
 }
+
+
 
 const Root = () => {
   return (

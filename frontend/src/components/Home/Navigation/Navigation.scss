@@ -8,18 +8,23 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
-    
-    
-    
+    // border: 1px solid red;
+    // padding-top: 25px;
+    // padding-bottom: 0px
     background-color: #d7d8da;
+    .fa-house{
+        padding-top: 25px;
+
+    }
 }
 
 .nav-bar button {
-    width: 80%;
+    width: 36px;
+    height: 36px;
+    
     border: 1px;
     border-radius: 5px;;
-    margin-bottom: 2px;
+    margin-bottom: 25px;
     cursor: pointer;
     
     background-color: purple;

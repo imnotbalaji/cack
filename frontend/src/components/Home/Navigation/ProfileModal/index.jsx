@@ -47,7 +47,7 @@ const ProfileModal = () => {
                     <h1>B</h1>
                     <p> {user.email}</p>
                 </div>
-                <input placeHolder = "Update your status" value ={status} onChange ={changeStatus} /> 
+                <input placeholder = "Update your status" value ={status} onChange ={changeStatus} /> 
                 <div className="userprofile">
                     <Link to ="/userprofile">Profile</Link>
                 </div>

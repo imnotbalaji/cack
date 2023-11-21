@@ -8,6 +8,7 @@ $slack-purple: #541554;
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    overflow: auto;
 
     > p {
         color: white;

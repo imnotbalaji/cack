@@ -1,4 +1,5 @@
 class Api::DirectMessagesController < ApplicationController
+  wrap_parameters include: DirectMessage.attribute_names + ['members','body'] 
   def index
     @user = current_user
     @dm_list = @user.dms.includes(:messages, :members)
@@ -17,8 +18,18 @@ class Api::DirectMessagesController < ApplicationController
   def create
     # @params = 
     # render json: 
-    render json: params
+    @dm = DirectMessage.create()
+    member_list = params[:direct_message][:members]
+    member_list << current_user.id
+    @dm.members = member_list.map{|memId| User.find(memId)}
+    message = Message.create(body: params[:direct_message][:body], author: current_user, conversation: @dm)
+
+    render :show
   end
   private
+  def direct_message_params
+    params.require(:direct_message).permit(:members)
+
+  end 
   
 end

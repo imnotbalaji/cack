@@ -22,9 +22,9 @@ ApplicationRecord.transaction do
 
     puts "Creating Users..."
 
-    harrypotter = User.create!(email: "demo_user1@cack.com", password: "password")
-    ronweaslsey = User.create!(email: "demo_user3@cack.com", password: "password")
-    hermionegranger = User.create!(email: "demo_user2@cack.com", password: "password")
+    harrypotter = User.create!(email: "harrypotter@cack.com", password: "password")
+    ronweaslsey = User.create!(email: "ronweasley@cack.com", password: "password")
+    hermionegranger = User.create!(email: "hermionegrangerå@cack.com", password: "password")
 
     puts "creating DM and adding members to it "
     

@@ -8,6 +8,7 @@ import { openModal } from "../../../store/modal";
 const ProfileButton = () => {
     
     const modal = useSelector(state => state.modal)
+    const current_user = useSelector(state => state.session.user.email)
 
    
     
@@ -29,8 +30,9 @@ const ProfileButton = () => {
     return(
         <>
             <button onClick ={openMenu}>
-                <div style={{color: "white",fontSize: "30px"}}>
-                    <i class="fa-regular fa-user"></i>
+                <div style={{color: "white",fontSize: "20px"}}>
+                    {/* <i class="fa-regular fa-user"></i> */}
+                    {current_user?.slice(0,1).toUpperCase()}
                 </div>
             </button>
             

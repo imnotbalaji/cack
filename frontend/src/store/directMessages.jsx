@@ -5,15 +5,27 @@ export const RECEIVE_DM_INDEX = "directMessages/RECEIVE_DM_INDEX"
 
 
 export const postMessagetoDM = (dmId, messageBody) => async (dispatch) => {
-  // debugger
   const res = await csrfFetch(`/api/direct_messages/${dmId}/messages`,{
     method: "POST",
     body: JSON.stringify(messageBody)
   })
 
   const data = await res.json()
-  console.log(data);
+
+
+}
+
+export const createDM = (memberList, messageBody) => async (dispatch) => {
+  const res = await csrfFetch('/api/direct_messages',{
+    method:"POST",
+    body: JSON.stringify({members: memberList, body: messageBody})
+  });
+  const data = await res.json();
+  console.log("DM_ID to redirect to is ",Object.values(data.directMessages)[0].id)
+  // console.log(data);
   dispatch({type: RECEIVE_DM, data})
+  return Object.values(data.directMessages)[0].id;
+
 
 }
 
@@ -56,24 +68,21 @@ export const sendDM = (message) => async (dispatch) => {
 }
 
 const dmReducer = (state = {}, action) => {
-  // const newState = {}  
   
-  const newState =  Object.assign({},Object.freeze(state))
+  
+  let newState =  Object.assign({},Object.freeze(state))
 
   switch (action.type) {
 
 
+      case RECEIVE_DM: 
+      return {...newState,...action.data.directMessages}
+
     
-    // case RECEIVE_DM: 
 
-    // // newState = {};
 
-    //  // This is needed to make sure we start from scratch - shouldnt be a problem since 
-
-    // return {...newState,...action.data.directMessages}
-
-    case RECEIVE_DM_INDEX:
-      // const newState = {};
+  case RECEIVE_DM_INDEX:
+    newState = {}  
 
     return {...newState,...action.data.directMessages}
 
