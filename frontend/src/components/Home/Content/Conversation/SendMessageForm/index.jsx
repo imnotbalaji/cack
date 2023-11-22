@@ -28,7 +28,8 @@ const SendMessageForm = ({dmId,userNames}) => {
         <form onSubmit={handleSubmit}>
             <textarea value={body} placeholder={`Message...${userNames}`} onChange = {handleChange}/>
             <div className="button-area"> 
-            <button>Submit</button> 
+                {/* <i class="fa-regular fa-face-smile"></i> */}
+                <button disabled={ (body!== "") ? false: true }>Submit</button> 
             </div>
            
 
