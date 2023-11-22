@@ -15,7 +15,7 @@ const SplashPage = () => {
         <span> Built for productivity</span></h1>
         <p>Connect the right people, find anything you need and automate the rest. That’s work in Slack, your productivity platform.</p>
         <div className="login-button">
-        <Link to ="/login">SIGN UP WITH EMAIL</Link>
+        <Link to ="/signup">SIGN UP WITH EMAIL</Link>
       
         
         </div>

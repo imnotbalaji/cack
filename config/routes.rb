@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :messages, only: [:create]
     end 
     resource :session, only: [:create, :show, :destroy]
+    resources :messages, only: [:update]
 
 
   end 

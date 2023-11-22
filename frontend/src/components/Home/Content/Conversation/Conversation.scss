@@ -1,8 +1,38 @@
+.message-header {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-left:25px;
+    padding-bottom: 23px;
+    padding-top: 20px;
+    // flex-grow: 0;
+    // flex-shrink:0;
+    // flex-basis: 8.2%;
+    // overflow: auto;
+
+    border-bottom: 1px solid lightgray;
+    font-weight: bold;
+    font-size: large;
+    
+
+}
 .message-area {
-    flex-grow: 0;
-    flex-shrink:0;
+    flex-grow: 1;
+    flex-shrink:1;
     flex-basis: 85%;
     overflow: auto;
+    li {
+        &:hover {
+            background-color: #E5E4E2;
+            color: black;
+            
+            padding: 2px;
+            
+        }
+    }
+    
 
 
 

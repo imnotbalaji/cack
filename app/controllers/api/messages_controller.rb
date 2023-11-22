@@ -12,6 +12,16 @@ class Api::MessagesController < ApplicationController
         render json: nil, status: :ok
 
     end 
+   
+    def update
+        # message_id = params[:id]
+        @message = Message.find(params[:id])
+        @message.update(body: params[:message][:body])
+        @dm = @message.conversation
+        render '/api/direct_messages/show'
+        # render json: {id: message_id, body: params[:message][:body],author_id: current_user.id}
+
+    end 
     def message_params
 
         params.require(:message).permit(:body)

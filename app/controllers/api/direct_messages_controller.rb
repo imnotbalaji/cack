@@ -3,7 +3,9 @@ class Api::DirectMessagesController < ApplicationController
   def index
     @user = current_user
     @dm_list = @user.dms.includes(:messages, :members)
-    render :index
+    ActionCable.server.broadcast("DirectMessagesIndexChannel", from_template('/api/direct_messages/index',"@dm_list": @dm_list))
+    # ActionCable.server.broadcast ("RoomsIndexChannel", from_template('api/rooms/index', rooms: @rooms))
+    # render :index
   end
 
   def show 
@@ -23,6 +25,9 @@ class Api::DirectMessagesController < ApplicationController
     member_list << current_user.id
     @dm.members = member_list.map{|memId| User.find(memId)}
     message = Message.create(body: params[:direct_message][:body], author: current_user, conversation: @dm)
+    @user = current_user
+    @dm_list = @user.dms.includes(:messages, :members)
+    ActionCable.server.broadcast("DirectMessagesIndexChannel", from_template('/api/direct_messages/index',"@dm_list": @dm_list))
 
     render :show
   end

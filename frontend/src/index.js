@@ -11,6 +11,8 @@ import { restoreSession } from './store/session';
 import { fetchDM, postMessagetoDM,fetchDMIndex } from './store/directMessages';
 import { fetchUsers } from './store/user';
 import { createDM } from './store/directMessages';
+import { editMessageThunkAction } from './store/messages';
+
 
 
 
@@ -25,7 +27,8 @@ if (process.env.NODE_ENV !== 'production'){
   window.fetchDMIndex = fetchDMIndex;
   window.postMessagetoDM = postMessagetoDM;
   window.fetchUsers = fetchUsers;
-  window.creatDM = createDM;
+  window.createDM = createDM;
+  window.editMessageThunkAction = editMessageThunkAction;
   
 
 }

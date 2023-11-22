@@ -6,6 +6,7 @@ import dmReducer from './directMessages';
 import userReducer from './user';
 import messageReducer from './messages';
 import channelReducer from './channel';
+import editModalReducer from './editmodal';
 
 
 
@@ -19,7 +20,8 @@ export const rootReducer = combineReducers({
     messages: messageReducer,
     users: userReducer,
     modal: modalReducer,
-    channel: channelReducer
+    channel: channelReducer,
+    editModal: editModalReducer
     
     
 })
